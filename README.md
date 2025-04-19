@@ -51,13 +51,13 @@ python -m streamlit run app.py
 ## Usage
 - Open the application in your browser (Streamlit will provide a local URL).
 -Input the following match details:
-- Batting Team: Select the team currently batting.
-- Bowling Team: Select the team currently bowling.
-- Host City: Select the city where the match is being played.
-- Target Score: Enter the target score set by the batting team.
-- Current Score: Enter the current score of the batting team.
-- Overs Done: Enter the number of overs completed.
-- Wickets Fallen: Enter the number of wickets lost.
+- `Batting Team`: Select the team currently batting.
+- `Bowling Team`: Select the team currently bowling.
+- `Host City`: Select the city where the match is being played.
+- `Target Score`: Enter the target score set by the batting team.
+- `Current Score`: Enter the current score of the batting team.
+- `Overs Done`: Enter the number of overs completed.
+- `Wickets Fallen`: Enter the number of wickets lost.
 Click the Predict Probabilities button to get the win probabilities for both teams.
 
 ## Model Details
@@ -72,6 +72,15 @@ The model predicts the probabilities of each team winning the match.
 - Improve the model by incorporating additional features like player performance and weather conditions.
 - Deploy the application to a cloud platform for public access.
 
+## Acknowledgments
+
+- **Dataset**: The IPL dataset used in this project was sourced from [Kaggle IPL Dataset](https://www.kaggle.com/datasets/ramjidoolla/ipl-data-set). It includes match-level and ball-by-ball data for IPL matches.
+- **Libraries**:
+  - [Streamlit](https://streamlit.io/): Used to create the interactive web application.
+  - [scikit-learn](https://scikit-learn.org/): Used for building and training the machine learning model.
+  - [pandas](https://pandas.pydata.org/): Used for data manipulation and analysis.
+  - [pickle](https://docs.python.org/3/library/pickle.html): Used for saving and loading the trained model.
+- **Inspiration**: This project was inspired by the need to provide cricket enthusiasts and analysts with a tool to predict match outcomes and enhance their understanding of the game.
 
 
 
