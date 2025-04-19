@@ -1,18 +1,33 @@
 # importing the libraries 
 import streamlit as st 
 import pickle as pkl 
-import pandas as pd 
-
+import pandas as pd
+import requests
+from io import BytesIO
 # having a wide page layout
 st.set_page_config(layout="wide")
 
 # Title of the page
 st.title("IPL Win Predictor")
 
+def load_pickle_from_url(url):
+    response = requests.get(url)
+    response.raise_for_status()  # Raise an error if the request fails
+    return pkl.load(BytesIO(response.content))
+
+# Replace these URLs with the raw URLs of your pickle files on GitHub
+team_url = "https://github.com/AnjanVankayala/ipl_predictor/raw/refs/heads/main/ipl_predictor/team.pkl"
+city_url = "https://github.com/AnjanVankayala/ipl_predictor/raw/refs/heads/main/ipl_predictor/city.pkl"
+model_url = "https://github.com/AnjanVankayala/ipl_predictor/raw/refs/heads/main/ipl_predictor/model.pkl"
+
 # Importing data an model from pickel
-teams = pkl.load(open('/mount/src/ipl_predictor/ipl_predictor/team.pkl','rb'))
-cities = pkl.load(open('/mount/src/ipl_predictor/ipl_predictor/city.pkl','rb'))
-model = pkl.load(open('/mount/src/ipl_predictor/ipl_predictor/model.pkl','rb'))
+teams = load_pickle_from_url(team_url)
+cities = load_pickle_from_url(city_url)
+model = load_pickle_from_url(model_url)
+# Importing data an model from pickel
+# teams = pkl.load(open('ipl_predictor/team.pkl','rb'))
+# cities = pkl.load(open('ipl_predictor/city.pkl','rb'))
+# model = pkl.load(open('ipl_predictor/model.pkl','rb'))
 
 # First Row and columns 
 
